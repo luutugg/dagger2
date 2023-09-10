@@ -1,5 +1,6 @@
 package com.example.learndargger2.data.model
 
+import android.app.Application
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 

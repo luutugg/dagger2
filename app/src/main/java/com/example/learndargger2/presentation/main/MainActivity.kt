@@ -8,8 +8,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.learndargger2.UserApplication
+import com.example.learndargger2.data.model.Test
 import com.example.learndargger2.databinding.ActivityMainBinding
 import com.example.learndargger2.di.factory.ViewModelFactory
+import com.example.learndargger2.di.module.Test22
+import com.example.learndargger2.di.module.XXX
 import com.example.learndargger2.presentation.update.UpdateActivity
 import javax.inject.Inject
 
@@ -23,6 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var bookViewModelFactory: ViewModelFactory
+
+    @Inject
+    lateinit var xxx: XXX
 
     private lateinit var viewModel: MainViewModel
 
@@ -42,6 +48,8 @@ class MainActivity : AppCompatActivity() {
         observeViewModel()
 
         setOnClickView()
+        xxx
+
     }
 
     override fun onStart() {
@@ -70,9 +78,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Inject
+    lateinit var test: Test
+
+    @Inject
+    lateinit var test22: Test22
+
+
     private fun setOnClickView() {
         binding.fabMain.setOnClickListener {
-            startActivity(Intent(this,UpdateActivity::class.java))
+            startActivity(Intent(this, UpdateActivity::class.java))
         }
     }
 }
